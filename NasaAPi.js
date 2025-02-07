@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 export default function NasaApi() {
     const [mars, setmars] = useState({ photos: [] });
     
-
     useEffect(() => {
         fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY")
             .then((response) => response.json())
@@ -24,7 +23,6 @@ export default function NasaApi() {
                         <th>Preview</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     {mars.photos.map((photo) => (
                         <tr key={photo.id}>
